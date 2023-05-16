@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/api_learn</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">admin</property>
+
+		<!-- below line is to tell the hibernate which language we are using, we 
+			are using mysql -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- below line is used by hibernate to automatically create a table if 
+			not present, if present then update it If we write "create" in place of "update" 
+			then each time new table is created -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- show us the data that hibernate is going to enter -->
+		<property name="show_sql">true</property>
+
+		<!-- used to format the sql query so that it is easily see to us in console -->
+		<property name="format_sql">true</property>
+
+
+
+	</session-factory>
+</hibernate-configuration>
